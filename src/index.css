@@ -1,0 +1,61 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+
+@theme {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+
+  --color-frame: #ecebef;
+  --color-ink: #151418;
+  --color-rail: #141316;
+  --color-muted: #8a8892;
+  --color-faint: #b9b7c0;
+  --color-soft: #f5f4f7;
+  --color-line: #ebeaef;
+
+  --color-lavender: #cfc3ee;
+  --color-lavender-strong: #b7a6ec;
+  --color-lavender-soft: #ece6fb;
+  --color-active: #d9cff6;
+  --color-pink: #f4c8e3;
+  --color-pink-soft: #f9e1ef;
+  --color-mint: #d5ebd9;
+  --color-sky: #d9e4f7;
+  --color-ok: #2e9b57;
+  --color-ok-soft: #e4f5e9;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-white text-ink font-sans;
+    font-feature-settings: "cv11", "ss01";
+  }
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-lavender-strong);
+    outline-offset: 2px;
+  }
+}
+
+@utility card-surface {
+  @apply rounded-[20px] bg-white shadow-[0_1px_2px_rgba(21,20,24,0.04)] transition-shadow duration-300;
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
